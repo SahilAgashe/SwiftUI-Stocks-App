@@ -8,14 +8,30 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+    @State private var searchTerm: String = ""
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
+        
+        NavigationView {
+            
+            ZStack {
+                Color.black
+                
+                Text("January 5 2020")
+                    .font(.custom("Arial", size: 32))
+                    .fontWeight(.bold)
+                    .foregroundStyle(Color.gray)
+                    .padding(EdgeInsets(top: 0, leading: 20, bottom: 0, trailing: 0))
+                    .offset(y: -300)
+                
+                SearchView(searchTerm: $searchTerm)
+                    .offset(y: -250)
+            }
+            
+            .navigationBarTitle("Stocks")
         }
-        .padding()
+        .edgesIgnoringSafeArea(.bottom)
     }
 }
 
