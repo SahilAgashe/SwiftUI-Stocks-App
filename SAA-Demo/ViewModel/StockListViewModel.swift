@@ -12,7 +12,7 @@ class StockListViewModel: ObservableObject {
     var searchTerm = ""
     
     func load() {
-        
+        fetchStocks()
     }
     
     private func fetchStocks() {
