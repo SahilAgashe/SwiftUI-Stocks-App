@@ -11,6 +11,10 @@
 		81F96DA02C5E05AE00D93CB1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F96D9F2C5E05AE00D93CB1 /* ContentView.swift */; };
 		81F96DA22C5E05AF00D93CB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F96DA12C5E05AF00D93CB1 /* Assets.xcassets */; };
 		81F96DA52C5E05AF00D93CB1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 81F96DA42C5E05AF00D93CB1 /* Preview Assets.xcassets */; };
+		81F96DAD2C5E065100D93CB1 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F96DAC2C5E065100D93CB1 /* Webservice.swift */; };
+		81F96DB02C5E071900D93CB1 /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F96DAF2C5E071900D93CB1 /* Stock.swift */; };
+		81F96DB32C5E0B6A00D93CB1 /* StockListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F96DB22C5E0B6A00D93CB1 /* StockListViewModel.swift */; };
+		81F96DB52C5E0B9700D93CB1 /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81F96DB42C5E0B9700D93CB1 /* StockViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		81F96D9F2C5E05AE00D93CB1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		81F96DA12C5E05AF00D93CB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		81F96DA42C5E05AF00D93CB1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		81F96DAC2C5E065100D93CB1 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
+		81F96DAF2C5E071900D93CB1 /* Stock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		81F96DB22C5E0B6A00D93CB1 /* StockListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockListViewModel.swift; sourceTree = "<group>"; };
+		81F96DB42C5E0B9700D93CB1 /* StockViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,9 @@
 		81F96D9C2C5E05AE00D93CB1 /* SAA-Demo */ = {
 			isa = PBXGroup;
 			children = (
+				81F96DB12C5E0B2A00D93CB1 /* ViewModel */,
+				81F96DAE2C5E070900D93CB1 /* Model */,
+				81F96DAB2C5E063200D93CB1 /* Service */,
 				81F96D9D2C5E05AE00D93CB1 /* SAA_DemoApp.swift */,
 				81F96D9F2C5E05AE00D93CB1 /* ContentView.swift */,
 				81F96DA12C5E05AF00D93CB1 /* Assets.xcassets */,
@@ -65,6 +76,31 @@
 				81F96DA42C5E05AF00D93CB1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		81F96DAB2C5E063200D93CB1 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				81F96DAC2C5E065100D93CB1 /* Webservice.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		81F96DAE2C5E070900D93CB1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				81F96DAF2C5E071900D93CB1 /* Stock.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		81F96DB12C5E0B2A00D93CB1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				81F96DB22C5E0B6A00D93CB1 /* StockListViewModel.swift */,
+				81F96DB42C5E0B9700D93CB1 /* StockViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +175,10 @@
 			files = (
 				81F96DA02C5E05AE00D93CB1 /* ContentView.swift in Sources */,
 				81F96D9E2C5E05AE00D93CB1 /* SAA_DemoApp.swift in Sources */,
+				81F96DB02C5E071900D93CB1 /* Stock.swift in Sources */,
+				81F96DB52C5E0B9700D93CB1 /* StockViewModel.swift in Sources */,
+				81F96DAD2C5E065100D93CB1 /* Webservice.swift in Sources */,
+				81F96DB32C5E0B6A00D93CB1 /* StockListViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
