@@ -22,7 +22,10 @@ struct ContentView: View {
     
     var body: some View {
         
-        NavigationView {
+        let filteredStocks = stockListVM.searchTerm.isEmpty ? 
+        stockListVM.stocks : stockListVM.stocks.filter { $0.symbol.starts(with: stockListVM.searchTerm) }
+
+        return NavigationView {
             
             ZStack(alignment: .leading) {
                 Color.black
@@ -38,7 +41,7 @@ struct ContentView: View {
                 SearchView(searchTerm: $stockListVM.searchTerm)
                     .offset(y: -250)
                 
-                StockListView(stocks: stockListVM.stocks)
+                StockListView(stocks: filteredStocks)
                     .offset(y: 150)
             }
             
@@ -48,9 +51,6 @@ struct ContentView: View {
     }
 }
 
-//#Preview {
-//    ContentView()
-//}
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
