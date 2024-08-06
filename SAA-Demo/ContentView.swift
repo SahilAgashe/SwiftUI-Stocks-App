@@ -9,15 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject private var stockListVM = StockListViewModel()
+    @StateObject private var stockListVM = StockListViewModel()
     
     init() {
         UINavigationBar.appearance().backgroundColor = .black
         UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor : UIColor.white]
         //UITableView.appearance().backgroundColor = .black
         //UITableViewCell.appearance().backgroundColor = .black
-        
-        stockListVM.load()
     }
     
     var body: some View {
@@ -46,6 +44,8 @@ struct ContentView: View {
             }
             
             .navigationBarTitle("Stocks")
+        }.onWillAppear {
+            stockListVM.load()
         }
         
     }
@@ -57,5 +57,56 @@ struct ContentView_Previews: PreviewProvider {
         //ContentView().previewDevice("iPhone 15 Pro Max")
 
         ContentView()
+    }
+}
+
+extension View {
+    func onWillAppear(_ perform: @escaping () -> Void) -> some View {
+        modifier(WillAppearModifier(callback: perform))
+    }
+}
+
+struct WillAppearModifier: ViewModifier {
+    let callback: () -> Void
+
+    func body(content: Content) -> some View {
+        content.background(UIViewLifeCycleHandler(onWillAppear: callback))
+    }
+}
+
+struct UIViewLifeCycleHandler: UIViewControllerRepresentable {
+    typealias UIViewControllerType = UIViewController
+
+    var onWillAppear: () -> Void = { }
+
+    func makeUIViewController(context: UIViewControllerRepresentableContext<Self>) -> UIViewControllerType {
+        context.coordinator
+    }
+
+    func updateUIViewController(
+        _: UIViewControllerType,
+        context _: UIViewControllerRepresentableContext<Self>
+    ) { }
+
+    func makeCoordinator() -> Self.Coordinator {
+        Coordinator(onWillAppear: onWillAppear)
+    }
+
+    class Coordinator: UIViewControllerType {
+        let onWillAppear: () -> Void
+
+        init(onWillAppear: @escaping () -> Void) {
+            self.onWillAppear = onWillAppear
+            super.init(nibName: nil, bundle: nil)
+        }
+
+        required init?(coder _: NSCoder) {
+            fatalError("init(coder:) has not been implemented")
+        }
+
+        override func viewWillAppear(_ animated: Bool) {
+            super.viewWillAppear(animated)
+            onWillAppear()
+        }
     }
 }
