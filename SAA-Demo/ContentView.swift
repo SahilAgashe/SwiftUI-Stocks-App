@@ -31,7 +31,7 @@ struct ContentView: View {
                 Color.black
                     .ignoresSafeArea()
                 
-                Text("January 5 2020")
+                Text("August 5 2024")
                     .font(.custom("Arial", size: 32))
                     .fontWeight(.bold)
                     .foregroundStyle(Color.gray)
